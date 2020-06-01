@@ -1,6 +1,6 @@
 {
   "name": "sync-sync-vscode",
-  "displayName": "sync-sync",
+  "displayName": "Sync-Sync",
   "description": "Syncing files with web services",
   "icon": "images/icon.png",
   "publisher": "tearoom6",
@@ -27,16 +27,85 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:sync-sync-vscode.helloWorld"
+    "onCommand:sync-sync-vscode.openSyncPanel",
+    "onCommand:sync-sync-vscode.rename",
+    "onCommand:sync-sync-vscode.delete"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "sync-sync-vscode.helloWorld",
-        "title": "Hello World"
+        "command": "sync-sync-vscode.openSyncPanel",
+        "title": "Open Sync-Sync panel",
+        "category": "Sync-Sync"
+      },
+      {
+        "command": "sync-sync-vscode.rename",
+        "title": "Rename with Sync",
+        "category": "Sync-Sync"
+      },
+      {
+        "command": "sync-sync-vscode.delete",
+        "title": "Delete with Sync",
+        "category": "Sync-Sync"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "sync-sync-vscode.openSyncPanel",
+          "group": "sync-sync@1"
+        },
+        {
+          "command": "sync-sync-vscode.rename",
+          "group": "sync-sync@2"
+        },
+        {
+          "command": "sync-sync-vscode.delete",
+          "group": "sync-sync@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "sync-sync-vscode.openSyncPanel",
+          "group": "sync-sync@1"
+        },
+        {
+          "command": "sync-sync-vscode.rename",
+          "group": "sync-sync@2"
+        },
+        {
+          "command": "sync-sync-vscode.delete",
+          "group": "sync-sync@3"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "sync-sync-vscode.openSyncPanel",
+        "key": "ctrl+shift+s"
+      }
+    ],
+    "configuration": {
+      "title": "Sync-Sync",
+      "properties": {
+        "sync-sync-vscode.basic.keepSecrets": {
+          "type": "boolean",
+          "default": true,
+          "description": "Save secrets info."
+        },
+        "sync-sync-vscode.basic.keepFilePath": {
+          "type": "boolean",
+          "default": true,
+          "description": "Keep file path on importing."
+        },
+        "sync-sync-vscode.confluence.flatImport": {
+          "type": "boolean",
+          "default": false,
+          "description": "Flat directory on importing. (Confluence)"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
