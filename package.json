@@ -1,7 +1,24 @@
 {
   "name": "sync-sync-vscode",
-  "displayName": "sync-sync-vscode",
+  "displayName": "sync-sync",
   "description": "Syncing files with web services",
+  "icon": "images/icon.png",
+  "publisher": "tearoom6",
+  "keywords": [
+    "Markdown",
+    "WordPress",
+    "Confluence",
+    "Qiita",
+    "Medium"
+  ],
+  "bugs": {
+    "url": "https://github.com/tearoom6/sync-sync-vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tearoom6/sync-sync-vscode.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.45.0"
