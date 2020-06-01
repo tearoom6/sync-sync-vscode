@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-     "onCommand:sync-sync-vscode.helloWorld"
+    "onCommand:sync-sync-vscode.helloWorld"
   ],
   "main": "./out/extension.js",
   "contributes": {
