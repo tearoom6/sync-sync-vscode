@@ -1,7 +1,29 @@
 import * as vscode from 'vscode'
 
+const getWebviewContent = () => {
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sync! Sync!</title>
+    </head>
+    <body>
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="500" />
+    </body>
+    </html>`;
+}
+
 const openSyncPanel = async () => {
-  vscode.window.setStatusBarMessage('openSyncPanel')
+  const panel = vscode.window.createWebviewPanel(
+    'sync-sync',
+    'Sync! Sync!',
+    vscode.ViewColumn.One,
+    {}
+  );
+
+  panel.webview.html = getWebviewContent();
 }
 
 const renameWithSync = async () => {
