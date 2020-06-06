@@ -1,8 +1,8 @@
 //@ts-check
 
-'use strict';
+'use strict'
 
-const path = require('path');
+const path = require('path')
 
 /**@type {import('webpack').Configuration}*/
 const extensionConfig = {
@@ -34,7 +34,7 @@ const extensionConfig = {
       },
     ],
   },
-};
+}
 
 const viewsConfig = {
   entry: './src/views/index.tsx',
@@ -61,6 +61,6 @@ const viewsConfig = {
       },
     ],
   },
-};
+}
 
-module.exports = [extensionConfig, viewsConfig];
+module.exports = [extensionConfig, viewsConfig]

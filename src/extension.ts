@@ -6,11 +6,11 @@ const getWebviewContent = (webview: vscode.Webview, extensionPath: string) => {
   // Load local (extension) resource.
   const scriptPathOnDisk = vscode.Uri.file(
     path.join(extensionPath, 'dist', 'views.js')
-  );
+  )
   // Load resource with `vscode-resource:` scheme URI.
-  const scriptUri = webview.asWebviewUri(scriptPathOnDisk);
+  const scriptUri = webview.asWebviewUri(scriptPathOnDisk)
   // Generate nonce for CSP.
-  const nonce = generateNonce();
+  const nonce = generateNonce()
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -24,7 +24,7 @@ const getWebviewContent = (webview: vscode.Webview, extensionPath: string) => {
         <div id="root"></div>
         <script nonce="${nonce}" src="${scriptUri}"></script>
     </body>
-    </html>`;
+    </html>`
 }
 
 const openSyncPanel = async (extensionPath: string) => {
@@ -38,9 +38,9 @@ const openSyncPanel = async (extensionPath: string) => {
         vscode.Uri.file(path.join(extensionPath, 'dist')),
       ],
     },
-  );
+  )
 
-  panel.webview.html = getWebviewContent(panel.webview, extensionPath);
+  panel.webview.html = getWebviewContent(panel.webview, extensionPath)
 }
 
 const renameWithSync = async () => {
