@@ -1,7 +1,8 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import SyncView from './components/sync-view'
 
 ReactDOM.render(
-  <h1>Sync! Sync!</h1>,
+  <SyncView />,
   document.getElementById('root')
 )
